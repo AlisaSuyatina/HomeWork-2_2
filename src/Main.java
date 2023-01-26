@@ -1,16 +1,21 @@
 public class Main {
     public static void main(String[] args) {
 
-        int balance = 200; //баланс клиента начальный
-        int replenishment = 1004; //сумма пополнения
-        int bonus = replenishment / 100;//бонус за пополнение
-        int newBalance = balance + replenishment;
-        int newBalanceBonus = balance + replenishment + bonus;
+        int balance = 100; //баланс клиента начальный
+        int replenishment = 500; //сумма пополнения
 
-        if (replenishment >= 1000) {
-            System.out.println("Баланс:" + newBalanceBonus);
-        } else
-            System.out.println("Баланс:" + newBalance);
+        int bonus;
+
+        if (replenishment <=1000) {
+            bonus = 0;
+        } else {
+            bonus = replenishment / 100;
+        }
+
+        int newBalanceBonus = balance + replenishment + bonus; //итоговый баланс
+
+        System.out.println("Бонус: " + bonus + " Итоговый баланс: " + newBalanceBonus);
+
 
     }
 }
